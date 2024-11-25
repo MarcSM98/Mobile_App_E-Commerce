@@ -1,0 +1,10 @@
+<ion-list lines=none>
+  <ion-list-header>
+    <h5><strong>Share via</strong></h5>
+  </ion-list-header>
+  <ion-item button (click)='close()'><ion-icon class='icon' name="mail-outline"></ion-icon><ion-text>Email</ion-text></ion-item>
+  <ion-item button (click)='close()'><ion-icon class='icon' name="logo-facebook"></ion-icon><ion-text>Facebook</ion-text></ion-item>
+  <ion-item button (click)='close()'><ion-icon class='icon' name="logo-whatsapp"></ion-icon><ion-text>WhatsApp</ion-text></ion-item>
+  <ion-item button (click)='close();reportAlert()'><ion-icon class='icon' name="alert-circle-outline"></ion-icon><ion-text>Report</ion-text></ion-item>
+  <ion-item button (click)='close()'><ion-icon class='icon' name="close-outline"></ion-icon><ion-text>Close</ion-text></ion-item>
+</ion-list>

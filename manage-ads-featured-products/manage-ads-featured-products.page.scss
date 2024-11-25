@@ -1,0 +1,122 @@
+ion-toolbar {
+  --background: var(--ion-color-primary);
+  box-shadow: 0em 1.125em 2.5em rgba(40, 59, 122, 0.302);
+  color: white;
+  ion-title {
+    font-weight: 600;
+  }
+}
+ion-searchbar {
+  margin: 1.250em;
+  right: 1.250em;
+  --background: rgba(0, 0, 0, 0.047);
+  --border-radius: 0.938em;
+  --box-shadow: 0em 1.125em 2.5em rgba(0, 0, 0, 0.051);
+}
+.empty {
+  text-align: center;
+  font-size: 1em;
+}
+.filter {
+  --color: var(--ion-color-primary);
+  --background: white;
+  text-transform: none;
+  font-weight: 600;
+  font-size: 0.875em;
+  margin-top: 1.563em;
+  height: 2.688em;
+  border-radius: 0.938em;
+  --box-shadow: 0em 1.125em 2.5em rgba(0, 0, 0, 0.051);
+  right: 0.625em;
+  position:absolute;
+}
+
+ion-segment {
+  margin-top: 0.625em;
+}
+ion-segment-button {
+  text-transform: none;
+  font-weight: 600;
+  --indicator-height: 0.188em;
+}
+ion-card-title {
+  font-size: 1.250em;
+  font-weight: 600;
+}
+.timing {
+  font-size: 0.725em;
+  margin-top: 0.625em;
+}
+ion-card {
+  margin: 1.250em;
+  position: relative;
+  border-radius: 0.625em;
+  padding-top: 0.625em;
+  padding-bottom: 0.625em;
+  box-shadow: 0em 1.125em 2.5em rgba(40, 59, 122, 0.302);
+  ion-avatar {
+    width: 5.625em;
+    height: 5.625em;
+  }
+  ion-label {
+    .title1 {
+      font-weight: 700;
+      color: var(--ion-color-primary);
+      font-size: 1.063em;
+    }
+    h3 {
+      font-weight: 600;
+      margin-top: 0.625em;
+      margin-bottom: 0.625em;
+    }
+    .title2 {
+      margin-top: 0.313em;
+      font-size: 0.938em;
+    }
+    p {
+      font-size: 0.625em;
+    }
+  }
+  .delete {
+    right: 0.625em;
+    top: 0.313em;
+    position: absolute;
+    ion-icon {
+      font-size: 1.250em;
+    }
+  }
+  .accept {
+    right: 3.125em;
+    position: absolute;
+    top: 0.313em;
+    ion-icon {
+      font-size: 1.250em;
+    }
+  }
+  .ignore {
+    right: 0.625em;
+    position: absolute;
+    top: 2.5em;
+    text-transform: none;
+    color: var(--ion-color-danger);
+  }
+
+  .ignore2 {
+    right: 0.625em;
+    position: absolute;
+    top: 4.375em;
+    text-transform: none;
+    color: var(--ion-color-danger);
+  }
+  .payment {
+    right: 0.625em;
+    position: absolute;
+    top: 3.125em;
+    text-transform: none;
+    font-size: 0.875em;
+  }
+}
+
+ion-fab {
+  margin: 1.250em;
+}

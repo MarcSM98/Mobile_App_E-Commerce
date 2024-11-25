@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Order Details</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button class='like' [routerLink]='["/chat-details", order.productId+order.buyer ]'>
+        <ion-icon slot='icon-only' name="chatbox-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item class='product-details' lines='none'>
+      <ion-thumbnail slot='start'>
+        <img src='{{order.image}}' alt=''>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{order.name}}</h2>
+        <p>{{order.id}}</p>
+      </ion-label>
+    </ion-item>
+    <ion-item class='payment'>
+      <ion-label>Quantity</ion-label>
+      <ion-text>{{order.qty}}</ion-text>
+    </ion-item>
+    <ion-item class='payment'>
+      <ion-label>Status</ion-label>
+      <ion-text>{{order.status}}</ion-text>
+    </ion-item>
+    <ion-item class='payment'>
+      <ion-label>Payment Mode</ion-label>
+      <ion-text>{{order.paymentMode}}</ion-text>
+    </ion-item>
+    <ion-item class='payment'>
+      <ion-label>Collection Mode</ion-label>
+      <ion-text>{{order.deliveryMode}}</ion-text>
+    </ion-item>
+    <ion-item class='payment'>
+      <ion-label>Order Date</ion-label>
+      <ion-text>{{order.orderDate | date:'dd MMM yyyy, h:mm:ss a'}}</ion-text>
+    </ion-item>
+    <ion-item class='payment'>
+      <ion-label>Last Updated</ion-label>
+      <ion-text>{{order.lastUpdated | date:'dd MMM yyyy, h:mm:ss a'}}</ion-text>
+    </ion-item>
+    <ion-button expand='block' class='confirm' [routerLink]='["/product-details", order.productId]' [disabled]="currentUser.username == '' || currentUser.role == 0 || currentUser.role == 2 || (currentUser.role == 3 && currentUser.email == order.seller)">Buy again</ion-button>
+
+</ion-content>

@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Sign up</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img src='assets/welcome.png' alt='' width=100%; height=199; style='margin: auto; '>
+  <h3>Let's Get Started</h3>
+  <h5>Create a new account</h5>
+  <form [formGroup]="register2Form">
+  <div>
+    <ion-item>
+      <ion-label position="floating">Username</ion-label>
+      <ion-input formControlName="username"></ion-input>
+    </ion-item>
+    <!--<div class='error-message'>
+      <ion-icon name="alert-circle-outline"></ion-icon>&nbsp;
+      <ion-text color='danger' class='error'><strong>Username is required!</strong></ion-text>
+    </div>-->
+  </div>
+  <div>
+    <ion-item>
+      <ion-label position="floating">Full Name</ion-label>
+      <ion-input formControlName="fullname"></ion-input>
+    </ion-item>
+  </div>
+  <div>
+    <ion-item>
+      <ion-label position="floating">Mobile Number</ion-label>
+      <ion-input formControlName="mobile"></ion-input>
+    </ion-item>
+  </div>
+  <div class='checkbox'>
+    <strong>
+      <ion-text color='primary' class='roles'>Roles</ion-text>
+    </strong>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-3>
+          <ion-checkbox color="primary" formControlName="buyer"></ion-checkbox>&nbsp;&nbsp;Buyer
+        </ion-col>
+        <ion-col>
+          <ion-checkbox color="primary" formControlName="seller"></ion-checkbox>&nbsp;&nbsp;Seller
+        </ion-col>
+        <ion-col>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div class='agreement'>
+      <ion-text>By signing up, you agree to La Lumiere's Terms and conditions.</ion-text>
+  </div>
+  <ion-button class='btn-register' expand='block' (click)="register2()">Sign up</ion-button>
+  <br><br><br>
+  </form>
+</ion-content>
