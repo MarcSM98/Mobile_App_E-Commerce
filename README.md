@@ -7,12 +7,17 @@ LaLumiere is a mobile e-commerce application designed to connect buyers and sell
 - Ionic
 - Cloud Firestore
 
+
 ## Features
 ![Features](https://github.com/user-attachments/assets/93b32eeb-b094-4bc3-95b8-ae2a263e6dd0)
 
 
+
+
 ## System Architecture
 ![System](https://github.com/user-attachments/assets/37a76556-2e4f-4936-a15b-20cdcdd2c046)
+
+
 
 
 ## Roles
@@ -24,6 +29,7 @@ LaLumiere is a mobile e-commerce application designed to connect buyers and sell
 
 - Admin
   ![Admin](https://github.com/user-attachments/assets/072c0159-509f-4735-8a03-8e4c1886aa28)
+
 
 
 ## Video
