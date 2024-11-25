@@ -1,0 +1,71 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      La Lumiere
+    </ion-title>
+    <ion-buttons slot='start'>
+      <ion-menu-button menu='main-menu'></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot='end'>
+      
+      <ion-button [routerLink]='["/search"]'>
+        <ion-icon slot="icon-only" name="search-outline"></ion-icon>
+      </ion-button>
+      
+      <ion-button id='notification-button' [routerLink]='["/chat"]' *ngIf="currentUser.username!=''">
+        <div class='new' *ngIf="currentUser.unreadChats.length > 0"></div>
+        <ion-icon slot='icon-only' name="chatbubbles-outline"></ion-icon>
+      </ion-button>
+
+      <ion-button id='notification-button' [routerLink]='["/announcements"]' *ngIf="currentUser.username!=''">
+        <div class='new' *ngIf="!currentUser.readA"></div>
+        <ion-icon slot='icon-only' name="notifications-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-text color='primary'>
+    <h2 class='advertisements'>Advertisements</h2>
+  </ion-text>
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <ion-col size="12">
+        <ion-slides [options]="categories" pager='true'>
+          <ion-slide *ngFor="let ad of ads">
+            <img src={{ad.image}} alt='' class="category" *ngIf="ad.type == 1" (click)='inAppBrowser(ad.info)'>
+            <img src={{ad.image}} alt='' class="category" [routerLink]="['/seller-details', ad.info]" *ngIf="ad.type == 2">
+          </ion-slide>
+        </ion-slides>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-text color='primary'>
+    <h2 class='featured-products'>Featured Products</h2>
+  </ion-text>
+  <ion-grid>
+    <ion-row>
+      <ion-col size='6' *ngFor="let product of products; let id = index">
+        <ion-button size='small' fill='clear' [ngClass]='myFav(id) ? "liked" : "like"' (click)='favouriteProduct(id)' *ngIf="currentUser.role == 1 || currentUser.role == 3">
+          <ion-icon slot='icon-only' name="heart"></ion-icon>
+        </ion-button>
+        <ion-card [routerLink]='["/product-details", product.id]'>
+          <img src='{{product.images[0]}}' alt=''>
+          <ion-card-header>
+            <ion-card-subtitle>
+              <ion-icon name="star" *ngIf='product.specialevent == true'></ion-icon>
+              {{product.name}}
+            </ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            S${{product.price}}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-button color='primary' fill='clear' expand='block' class='view-more' [routerLink]='["/featured-products"]'>
+    View More
+  </ion-button>
+</ion-content>

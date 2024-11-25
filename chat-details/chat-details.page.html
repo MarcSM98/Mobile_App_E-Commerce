@@ -1,0 +1,27 @@
+<ion-header *ngIf="chat">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-avatar slot="start">
+      <img src="{{chat.buyer == adminEmail  && currentUser.role != 0 ? fsService.adminImage: (chat.image == ''? fsService.blankImage : chat.image)}}">
+    </ion-avatar>
+    <ion-label>
+      <h5 class='title'>{{chat.buyer == adminEmail ? (chat.buyer == currentUser.email ? chat.seller_un : "Admin Chat"): (chat.seller == currentUser.email ? chat.productName + " - " + chat.buyer_un: chat.productName + " - " + chat.seller_un)}}</h5>
+    </ion-label>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="nb-theme-default" *ngIf="chat">
+  <nb-layout-column>
+    <nb-chat>
+      <nb-chat-message *ngFor="let msg of chat.messages" [message]="msg.text" [reply]="myReply(msg.sender)"
+        [date]="msg.date.toDate()" [dateFormat]="df"
+        [avatar]="other_profilepic == ''? fsService.blankImage : other_profilepic">
+      </nb-chat-message>
+
+      <nb-chat-form (send)="sendMessage($event)" [dropFiles]="false">
+      </nb-chat-form>
+    </nb-chat>
+  </nb-layout-column>
+</ion-content>

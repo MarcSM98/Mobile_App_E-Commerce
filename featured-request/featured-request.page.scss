@@ -1,0 +1,80 @@
+ion-toolbar {
+  --background: var(--ion-color-primary);
+  --color: white;
+  box-shadow: 0em 1.125em 2.5em rgba(40, 59, 122, 0.302);
+}
+.product-details {
+  ion-thumbnail {
+    min-width: 6rem;
+    min-height: 6rem;
+    --border-radius: 10%;
+    margin: 1.250em;
+    img {
+      max-width: 6rem;
+      min-width: 6rem;
+    }
+  }
+  ion-label {
+    h2 {
+      font-size: 1.5em;
+      font-weight: 600;
+    }
+    p {
+      font-size: 1em;
+    }
+  }
+}
+.message {
+  display: flex;
+  margin-top: 1.5rem;
+  margin-left: 1.875em;
+  margin-right: 1.875em;
+  border-radius: 0.625em 0.625em 0.625em 0.625em;
+  border-style: "solid";
+  --background: #eeee;
+  ion-label {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.875em;
+    font-size: 1rem;
+  }
+  ion-input {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.875em;
+  }
+}
+.payment {
+  margin-left: 1.875em;
+  margin-top: 1.250em;
+  margin-right: 1.875em;
+  margin-bottom: 1.563em;
+  border-radius: 0.625em 0.625em 0.625em 0.625em;
+  border-style: "solid";
+  --background: #eeee;
+  ion-label {
+    font-family: "Montserrat", sans-serif;
+  }
+  ion-input {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1em;
+  }
+}
+.agreement {
+  margin-left: 1.875em;
+  font-weight: 600;
+  padding-top: 2em;
+  line-height: 1.5em;
+  font-size: 0.875em;
+  ion-button {
+    text-transform: none;
+    font-size: 0.938em;
+    margin-bottom: 1.05em;
+    font-size: 0.875em;
+  }
+}
+.confirm {
+  margin-left: 1.875em;
+  margin-right: 1.875em;
+  margin-top: 1.250em;
+  text-transform: none;
+  box-shadow: 0em 1.250em 2.5em rgba(40, 59, 122, 0.302);
+}
