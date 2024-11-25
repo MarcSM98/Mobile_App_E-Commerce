@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Reserve {{product.name}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]='true'>
+  <form [formGroup]="reserveForm">
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <ion-col size="12">
+        <ion-slides [options]="products" pager='true'>
+          <ion-slide *ngFor="let img of product.images">
+            <img src='{{img}}' alt='' class="category">
+          </ion-slide>
+        </ion-slides>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-text color='primary'>
+    <h1>{{product.name}}</h1>
+  </ion-text>
+  <ion-text>
+    <h3>S${{product.price}}</h3>
+  </ion-text>
+  <ion-list lines='none'>
+    <ion-item class='selection'>
+      <ion-label>Quantity</ion-label>
+      <ion-select value='1' interface=popover  formControlName="qty">
+        <ion-select-option *ngFor="let item of [].constructor(this.product.qty); let i = index" value='{{i+1}}'>{{i+1}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item class='selection'>
+      <ion-label>Delivery Mode</ion-label>
+      <ion-select value='Meetup' interface=popover formControlName="deliveryMode">
+        <ion-select-option *ngFor="let mode of product.deliveryMode" value='{{mode}}'>{{mode}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item class='selection'>
+      <ion-label>Payment</ion-label>
+      <ion-select value='Paylah' interface=popover formControlName="paymentMode">
+        <ion-select-option value='Paylah'>Paylah</ion-select-option>
+        <ion-select-option value='Cash'>Cash</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-button expand='block' class='confirm' (click)="confirmAlert()">
+    Confirm
+  </ion-button>
+</form>
+</ion-content>
