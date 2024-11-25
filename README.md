@@ -19,7 +19,7 @@ LaLumiere is a mobile e-commerce application designed to connect buyers and sell
 
 ## User Guide
 - Buyer
-  ![Buyer](https://github.com/user-attachments/assets/ee7865ac-2517-4d57-8d3f-7d4a20e20c5a)
+  ![Admin1](https://github.com/user-attachments/assets/02831d52-cfd2-463e-a24a-877e7ca14d73)  ![Admin2](https://github.com/user-attachments/assets/bf82a669-1587-44e6-9176-31f938de71c7)  ![Admin3](https://github.com/user-attachments/assets/adcd9501-ae30-4e36-92e0-45bd221fd065)
   
 - Seller
   ![Seller](https://github.com/user-attachments/assets/c1db3036-e409-4c24-a4c6-fdb80958632b)
@@ -31,6 +31,6 @@ LaLumiere is a mobile e-commerce application designed to connect buyers and sell
 
 ## Video
 https://drive.google.com/file/d/1DmnhxYQqY987DNuF4Ht1e2ibHrivvVsW/view
-![Admin1](https://github.com/user-attachments/assets/02831d52-cfd2-463e-a24a-877e7ca14d73)  ![Admin2](https://github.com/user-attachments/assets/bf82a669-1587-44e6-9176-31f938de71c7)  ![Admin3](https://github.com/user-attachments/assets/adcd9501-ae30-4e36-92e0-45bd221fd065)
+
 
 
