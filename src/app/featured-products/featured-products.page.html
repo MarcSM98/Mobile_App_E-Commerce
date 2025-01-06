@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Featured Products
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col size='6' *ngFor="let product of products; let id = index">
+        <ion-button size='small' fill='clear' [ngClass]='myFav(id) ? "liked" : "like"' (click)='favouriteProduct(id)' *ngIf="currentUser.role == 1 || currentUser.role == 3">
+          <ion-icon slot='icon-only' name="heart"></ion-icon>
+        </ion-button>
+        <ion-card [routerLink] = '["/product-details", product.id]'>
+          <img src='{{product.images[0]}}' alt=''>
+          <ion-card-header>
+            <ion-card-subtitle>
+              <ion-icon name="star" *ngIf='product.specialevent == true'></ion-icon>        <!-- Change -->
+              {{product.name}}
+          </ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            S${{product.price}}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button [routerLink]="['/featured-request']" *ngIf="currentUser.isSeller">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

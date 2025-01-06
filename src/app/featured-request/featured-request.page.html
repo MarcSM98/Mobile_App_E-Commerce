@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Featured Request</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="featuredForm">
+    <ion-item class='product-details' lines='none'>
+      <ion-thumbnail slot='start'>
+        <img src='{{originalImage}}' alt=''>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{featuredForm.value.selectedProduct == null ? '' :featuredForm.value.selectedProduct[0]}}</h2>
+      </ion-label>
+    </ion-item>
+    <ion-item class='payment'>
+      <ion-label>Select a Product</ion-label>
+      <ion-select interface=popover formControlName='selectedProduct' (ionChange)="onProductChange($event)">
+        <ion-select-option *ngFor="let p of products; let id = index" [value]='[p.name, id, p.id]'>
+          {{p.name}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item class='payment'>
+      <ion-label>Payment Mode</ion-label>
+      <ion-select value='1' interface=popover formControlName='paymentMode'>
+        <ion-select-option value='PayLah'>PayLah</ion-select-option>
+        <ion-select-option value='Cash'>Cash</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <div class='agreement'>
+      <ion-text style='font-weight: 600;'>By requesting the product to be featured product,
+        you agree to our </ion-text>
+      <ion-button fill='clear' size='small'><strong>Terms and conditions</strong></ion-button>
+    </div>
+    <ion-button expand='block' class='confirm' (click)="confirmAlert()">Confirm</ion-button>
+  </form>
+</ion-content>
