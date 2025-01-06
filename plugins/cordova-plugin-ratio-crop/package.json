@@ -1,0 +1,56 @@
+{
+  "_from": "cordova-plugin-ratio-crop",
+  "_id": "cordova-plugin-ratio-crop@1.2.0",
+  "_inBundle": false,
+  "_integrity": "sha512-tzbxMAY2M8dqKN/tgjLF8aUjdHC/4wa+kwPzYnSjPup/Yqf3smCfjJbDWPCcR3D+wl1eNM/rj70kkyb9AzDK+A==",
+  "_location": "/cordova-plugin-ratio-crop",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cordova-plugin-ratio-crop",
+    "name": "cordova-plugin-ratio-crop",
+    "escapedName": "cordova-plugin-ratio-crop",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#DEV:/",
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-ratio-crop/-/cordova-plugin-ratio-crop-1.2.0.tgz",
+  "_shasum": "8c71e312a6f5a20606f980af6f81a7ba1cc7f6b8",
+  "_spec": "cordova-plugin-ratio-crop",
+  "_where": "C:\\Users\\huhuimei\\Documents\\lalumiere_28jan",
+  "bugs": {
+    "url": "https://github.com/peterantonyrausch/cordova-plugin-ratio-crop/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-ratio-crop",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "deprecated": false,
+  "description": "RatioCrop based on qwerqwermhc/Crop.",
+  "homepage": "https://github.com/peterantonyrausch/cordova-plugin-ratio-crop#readme",
+  "keywords": [
+    "cordova",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "image",
+    "image manipulation",
+    "crop"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-ratio-crop",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peterantonyrausch/cordova-plugin-ratio-crop.git"
+  },
+  "version": "1.2.0"
+}
