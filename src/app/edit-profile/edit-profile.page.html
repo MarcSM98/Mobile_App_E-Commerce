@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Edit Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="profileForm">
+  <img class='avatar' src='{{imgpath == "" ? (image == "" ? fsService.blankImage : image) : imgpath}}' alt=''>
+  <ion-button class='changePic' expand='block' fill='clear' (click)='presentActionSheet()' *ngIf="currentUser!=null && currentUser.role!=0">Change profile picture
+  </ion-button>
+  <ion-item>
+    <ion-label position="floating">Full Name</ion-label>
+    <ion-input formControlName="fullname"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Phone Number</ion-label>
+    <ion-input formControlName="mobile"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">School</ion-label>
+    <ion-input formControlName="school"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Course</ion-label>
+    <ion-input formControlName="course"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Description</ion-label>                      <!-- Change -->
+    <ion-textarea rows='10' inputmode="text" formControlName="description"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Facebook Profile URL</ion-label>
+    <ion-input formControlName="facebookurl"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Instagram Profile URL</ion-label>
+    <ion-input formControlName="instagramurl"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Twitter Profile URL</ion-label>
+    <ion-input formControlName="twitterurl"></ion-input>
+  </ion-item>
+  <!-- <ion-item lines='none' class='toggle'>                                                     
+    <ion-label>Facebook</ion-label>
+    <ion-toggle formControlName="facebook"></ion-toggle>
+  </ion-item>
+  <ion-item lines='none' class='toggle'>                                                     
+    <ion-label>Instagram</ion-label>
+    <ion-toggle formControlName="instagram"></ion-toggle>
+  </ion-item>
+  <ion-item lines='none' class='toggle'>                                                     
+    <ion-label>Twitter</ion-label>
+    <ion-toggle formControlName="twitter"></ion-toggle>
+  </ion-item> -->
+  <ion-item>
+    <ion-label>Social Media</ion-label>
+    <ion-select multiple="true" value='socialmd != null ? socialmd[0].name: ""' formControlName="socialPlatform">
+      <ion-select-option *ngFor="let d of socialmd" [value]="d.name">{{d.name}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-button class='updateProfile' expand='block' (click)='updateProfile()'>Update Profile</ion-button>
+  </form>
+</ion-content>

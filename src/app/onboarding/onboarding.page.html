@@ -1,0 +1,35 @@
+<ion-content>
+  <div class='onboard-main'>
+    <ion-toolbar>
+      <ion-buttons slot='start'>
+        <ion-button color='primary' (click)='goBack()' *ngIf='slideIndex == 1 || slideIndex == 2'>
+          <ion-icon name='chevron-back' slot='icon-only'></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-buttons slot='end'>
+        <ion-button color='dark' (click)='skipBtn()' *ngIf='slideIndex != 2' fill='clear'>
+          Skip
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </div>
+  <div class='onboard-bot'>
+    <ion-slides pager='true' #mainSlides [options]='slideOpts' (ionSlideDidChange)="ionSlideChange(slides)">
+      <ion-slide *ngFor='let slide of onboardSlides'>
+        <div class='onb-card'>
+          <div class='onb-desc ion-text-center'><br><br><br>
+            <h4 class='ion-text-capitalize ion-no-margin'>{{slide.title}}</h4>
+            <br>
+            <div class='onb-img'>
+              <img src='{{slide.img}}' alt='' style="object-fit: cover">
+            </div>
+            <p class='ion-no-margin'>
+              {{slide.desc}}
+            </p>
+          </div>
+        </div>
+      </ion-slide>
+    </ion-slides>
+    <ion-button class='navigation' expand='block' (click)='goNext()'>{{buttonName}}</ion-button>
+  </div>
+</ion-content>

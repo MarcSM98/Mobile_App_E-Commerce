@@ -1,0 +1,42 @@
+ion-toolbar {
+  --background: var(--ion-color-primary);
+  --color: white;
+  box-shadow: 0em 1.125em 2.5em rgba(40, 59, 122, 0.302);
+}
+.avatar {
+  display: block;
+  border-radius: 50%;
+  width: 8.688em;
+  height: 8.688em;
+  margin-top: 2.5em;
+  margin-left: auto;
+  margin-right: auto;
+}
+.changePic {
+  text-transform: none;
+  font-weight: 600;
+  margin-top: 1.250em;
+  margin-bottom: 1.875em;
+}
+ion-item {
+  margin-left: 1.875em;
+  margin-top: 1.250em;
+  margin-right: 1.875em;
+  margin-bottom: 1.563em;
+  border-radius: 0.625em 0.625em 0.625em 0.625em;
+  border-style: "solid";
+  --background: #eeee;
+  ion-label {
+    font-family: "Montserrat", sans-serif;
+  }
+  ion-input {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1em;
+  }
+}
+.updateProfile {
+  margin: 3.125em;
+  height: 2.5em;
+  text-transform: none;
+  box-shadow: 0em 1.125em 2.5em rgba(40, 59, 122, 0.302);
+}

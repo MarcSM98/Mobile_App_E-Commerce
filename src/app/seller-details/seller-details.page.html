@@ -1,0 +1,120 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Seller Details</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img class='avatar' src='{{seller_profilepic == "" ? fsService.blankImage : seller_profilepic}}' alt=''>
+  <h5 class='fullName'>{{user.fullname}}</h5>
+  <p class='userId'>{{user.username}}</p>
+  <p class='school'>{{user.school}} | {{user.course}}</p>         <!-- Include school -->
+  <p class='description'>{{user.description}}</p>         <!-- Change -->
+    
+
+
+  <!--can use *ngFor in this situation-->
+  <div class='showRating'>
+    <span [ngClass]="(avgRating < 1)?'star-not-filled':'star'">
+      <ion-icon name="star"></ion-icon>
+    </span>
+    <span [ngClass]="(avgRating < 2)?'star-not-filled':'star'">
+      <ion-icon name="star"></ion-icon>
+    </span>
+    <span [ngClass]="(avgRating < 3)?'star-not-filled':'star'">
+      <ion-icon name="star"></ion-icon>
+    </span>
+    <span [ngClass]="(avgRating < 4)?'star-not-filled':'star'">
+      <ion-icon name="star"></ion-icon>
+    </span>
+    <span [ngClass]="(avgRating < 5)?'star-not-filled':'star'">
+      <ion-icon name="star"></ion-icon>
+    </span>
+  </div>
+  <ion-segment (ionChange)="segmentChanged($event)" value='products'>
+    <ion-segment-button value="products" layout='icon-start'>
+      <ion-icon name="cube-outline"></ion-icon>
+      <ion-label>Products</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="reviews" layout='icon-start'>
+      <ion-icon name="chatbubbles-outline"></ion-icon>
+      <ion-label>Reviews</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <div class='animate__animated animate__slideInUp' *ngIf="segment === 'products'">
+    <ion-grid>
+      <ion-row>
+        <ion-col size='6' *ngFor="let product of products; let id = index">
+          <ion-button size='small' fill='clear' [ngClass]='myFav(id) ? "liked" : "like"' (click)='favouriteProduct(id)'
+            *ngIf="currentUser.role == 1 || currentUser.role == 3">
+            <ion-icon slot='icon-only' name="heart"></ion-icon>
+          </ion-button>
+          <ion-card [routerLink]='["/product-details", product.id]'>
+            <img src='{{product.images[0]}}' alt=''>
+            <ion-card-header>
+              <ion-card-subtitle>{{product.name}}</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              S${{product.price}}
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div *ngIf="segment==='reviews'">
+    <ion-grid>
+      <ion-row *ngIf="reviews != null && reviews.length == 0" class="empty">  
+        <ion-col size='12' >
+          No reviews found.
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size='12' *ngIf="reviews != null && reviews.length > 0">
+          <h4 class='latestReview'>Latest Reviews</h4>
+          <ion-card class='comment animate__animated animate__slideInUp' *ngFor="let review of reviews">
+            <ion-item lines='none'>
+              <ion-avatar slot='start'>
+                <img src='{{review.image == "" ? fsService.blankImage : review.image}}' alt=''>
+              </ion-avatar>
+              <ion-label>
+                <h2>{{review.author_un}}</h2>
+                <span [ngClass]="(review.rating < 1)?'star-not-filled':'star'">
+                  <ion-icon name="star"></ion-icon>
+                </span>
+                <span [ngClass]="(review.rating < 2)?'star-not-filled':'star'">
+                  <ion-icon name="star"></ion-icon>
+                </span>
+                <span [ngClass]="(review.rating < 3)?'star-not-filled':'star'">
+                  <ion-icon name="star"></ion-icon>
+                </span>
+                <span [ngClass]="(review.rating < 4)?'star-not-filled':'star'">
+                  <ion-icon name="star"></ion-icon>
+                </span>
+                <span [ngClass]="(review.rating < 5)?'star-not-filled':'star'">
+                  <ion-icon name="star"></ion-icon>
+                </span>
+                <p>{{review.date.toDate() | date:'dd MMM yyyy, h:mm:ss a'}}</p>
+              </ion-label>
+              <!--<ion-button size='small' fill='clear' class='delete'>
+          <ion-icon slot='icon-only' name="trash-outline"></ion-icon>
+        </ion-button>
+        <ion-button size='small' fill='clear' class='edit'>
+          <ion-icon slot='icon-only' name="pencil"></ion-icon>
+        </ion-button>-->
+            </ion-item>
+            <p class='review-text'>{{review.msg}}</p>
+          </ion-card>
+          <ion-button color='primary' fill='clear' expand='block' class='view-more'
+            [routerLink]='["/seller-review", user.email]'>
+            View More
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

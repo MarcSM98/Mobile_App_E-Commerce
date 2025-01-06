@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button style='color: white;' menu='main-menu'></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img src='assets/login.png' alt='' width=276; height=206; style='margin-left: 5rem;'>
+  <h3>Welcome Back!!</h3>
+  <h5>Sign in to Continue</h5>
+  <form [formGroup]="loginForm">
+  <div>
+    <ion-item>
+      <ion-label position="floating">Email Address</ion-label>
+      <ion-input formControlName="email"></ion-input>
+    </ion-item>
+  </div>
+  <div>
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input formControlName="password" type="password"></ion-input>
+    </ion-item>
+  </div>
+  <ion-button class='btn-login' expand='block' (click)="login()" [disabled]="buttonDisabled">Login</ion-button>
+  <div>
+    <ion-grid class='moveToRight'>
+      <ion-row>
+        <ion-col style='text-align: right;'>
+          <ion-button class='forgot-password' size='small' fill='clear' (click)='presentAlertPrompt()'>Forgot Password?
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+         <p class="right-row"><ion-button fill='clear' size='small' class='btn-register' [routerLink] = '["/register"]'>Don't have an account? Register</ion-button></p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <p class='or'>OR</p>
+  <ion-button class='google-button' expand='block' (click)="googleSignIn()" [disabled]="buttonDisabled"><img class='google-icon'
+      src='assets/google.svg'>&nbsp;&nbsp;&nbsp;&nbsp;Continue With Google</ion-button>
+  <br><br><br><br><br><br>
+  </form>
+</ion-content>
