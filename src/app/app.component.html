@@ -1,0 +1,98 @@
+<ion-app>
+  <ion-menu menuId='main-menu' contentId='main'>
+    <ion-content>
+      <div class='menu-header-bg-not' *ngIf='currentUser.fullname == ""'></div>
+      <div class='menu-header-bg' *ngIf='currentUser.fullname != ""'></div>
+      <div class='header-content' *ngIf='currentUser.fullname != ""' [routerLink]='["/profile"]' (click)='close()'>
+        <img src='{{currentUser.image == "" ? fsService.blankImage : currentUser.image}}' alt=''>
+        <ion-label>
+          <div class="title">{{currentUser.fullname}}</div>
+          
+          <p>{{currentUser.role == 0 ? "Admin" : (currentUser.role == 1 ? "Buyer" : (currentUser.role == 2 ? "Seller" : "Buyer, Seller"))}}</p>
+        </ion-label>
+      </div>
+
+      <!-- Buyer and Seller -> Home, Featured Products
+      Messages, Notifications, Advertisement Request, -->
+
+      <!-- Admin -> Dashboard, Products, Users, Announcements,
+      Special Events, Reports, Ads & Featured Requests-->
+
+      <ion-list class='menu-items' lines='none'>
+        <ion-item [routerLink]='["/home"]' (click)='close()' routerLinkActive='active'>
+          <ion-icon name="home-outline"></ion-icon>
+          <ion-label>Home</ion-label>
+        </ion-item>
+        <ion-item [routerLink]='["/featured-products"]' (click)='close()' routerLinkActive='active'>
+          <ion-icon name="star-outline"></ion-icon>
+          <ion-label>Featured Products</ion-label>
+        </ion-item>
+        <ion-item [routerLink]='["/products"]' (click)='close()' routerLinkActive='active'>
+          <ion-icon name="grid-outline"></ion-icon>
+          <ion-label>All Products</ion-label>
+        </ion-item>
+        <ion-item [routerLink]='["/chat"]' (click)='close()' routerLinkActive='active' *ngIf='currentUser.fullname != ""'>
+          <ion-icon name="chatbubbles-outline"></ion-icon>
+          <ion-label>Chat Messages</ion-label>
+        </ion-item>
+        <ion-item [routerLink]='["/ads-request"]' (click)='close()' *ngIf='currentUser.isSeller' routerLinkActive='active'>
+          <ion-icon name="megaphone-outline"></ion-icon>
+          <ion-label>Advertisement Request</ion-label>
+        </ion-item>
+        <ion-item [routerLink]='["/admin-dashboard"]' (click)='close()' *ngIf='currentUser.isAdmin' routerLinkActive='active'>
+          <ion-icon name="bar-chart-outline"></ion-icon>
+          <ion-label>Dashboard</ion-label>
+        </ion-item>
+        <ion-item [routerLink]='["/manage-ads-featured-products"]' (click)='close()' *ngIf='currentUser.isAdmin' routerLinkActive='active'>
+          <ion-icon name="megaphone-outline"></ion-icon>
+          <ion-label>Manage Requests</ion-label>
+        </ion-item>
+        <ion-item [routerLink]='["/manage-products"]' (click)='close()' *ngIf='currentUser.isAdmin' routerLinkActive='active'>
+          <ion-icon name="grid-outline"></ion-icon>
+          <ion-label>Manage Products</ion-label>
+        </ion-item>
+        <ion-item [routerLink]='["/manage-users"]' (click)='close()' *ngIf='currentUser.isAdmin' routerLinkActive='active'>
+          <ion-icon name="people-outline"></ion-icon>
+          <ion-label>Manage Users</ion-label>
+        </ion-item>
+        <ion-item [routerLink]='["/manage-reports"]' (click)='close()' *ngIf='currentUser.isAdmin' routerLinkActive='active'>
+          <ion-icon name="alert-circle-outline"></ion-icon>
+          <ion-label>Manage Reports</ion-label>
+        </ion-item>
+        <ion-item [routerLink]='["/manage-special-event"]' (click)='close()' *ngIf='currentUser.isAdmin' routerLinkActive='active'>
+          <ion-icon name="bulb-outline"></ion-icon>
+          <ion-label>Special Events</ion-label>
+        </ion-item>
+        <ion-item [routerLink]='["/special-events"]' (click)='close()' routerLinkActive='active'>   <!-- Listing special event -->
+          <ion-icon name="today-outline"></ion-icon> 
+          <ion-label>Special Events</ion-label> 
+        </ion-item>
+        <ion-item [routerLink]='["/profile"]' (click)='close()' *ngIf='currentUser.fullname != ""'  routerLinkActive='active'>
+          <ion-icon name="person-outline"></ion-icon>
+          <ion-label>Profile</ion-label>
+        </ion-item>
+        <ion-item (click)="logout();close()" [routerLink]='["/home"]' *ngIf='currentUser.fullname != ""'>
+          <ion-icon name="log-out-outline"></ion-icon>
+          <ion-label>Log out</ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-item-divider></ion-item-divider>
+      <ion-list class='second-menu-items' lines='none'>
+        <ion-item [routerLink]='["/login"]' (click)='close()' *ngIf='currentUser.fullname == ""' routerLinkActive='active'>
+          <ion-label>Log in</ion-label>
+        </ion-item>
+        <ion-item [routerLink]='["/register"]' (click)='close()' *ngIf='currentUser.fullname == ""' routerLinkActive='active'>
+          <ion-label>Sign up</ion-label>
+        </ion-item>
+        <ion-item [routerLink]='["/about-us"]' (click)='close()' routerLinkActive='active'>
+          <ion-label>About us</ion-label>
+        </ion-item>
+        <ion-item [routerLink]='["/terms-conditions"]' (click)='close()' routerLinkActive='active'>
+          <ion-label>Terms and Conditions</ion-label>
+        </ion-item>
+      </ion-list>
+      <br><br>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id='main'></ion-router-outlet>
+</ion-app>
