@@ -1,0 +1,7 @@
+{
+  "name": "lalumiere",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

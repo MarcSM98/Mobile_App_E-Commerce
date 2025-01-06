@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "387544577072",
+    "project_id": "lalumiere-af4a3",
+    "storage_bucket": "lalumiere-af4a3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:387544577072:android:7d5db658ddf955c38469f5",
+        "android_client_info": {
+          "package_name": "io.ionic.lalumiere"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "387544577072-8kg52qv3125a9722kgs6umk1l13qgchs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.ionic.lalumiere",
+            "certificate_hash": "7cb593781cace8efc1fc8304b18dbb85824e05c6"
+          }
+        },
+        {
+          "client_id": "387544577072-rnhv6j697kkitfseinaak9giu5gpncqi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCT84taW8FY7wgAA9Z8YGqdebx8mGrnVwY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "387544577072-rnhv6j697kkitfseinaak9giu5gpncqi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
