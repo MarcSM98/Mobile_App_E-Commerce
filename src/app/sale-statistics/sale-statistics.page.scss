@@ -1,0 +1,39 @@
+ion-toolbar {
+  --background: var(--ion-color-primary);
+  --color: white;
+  box-shadow: 0em 1.125em 2.5em rgba(40, 59, 122, 0.302);
+}
+ion-card {
+  margin: 1.875em;
+  border-radius: 0.625em;
+  box-shadow: 0em 1.250em 2.5em rgba(40, 59, 122, 0.302);
+  ion-card-subtitle {
+    color: var(--ion-color-primary);
+  }
+  ion-card-header {
+    font-weight: 600;
+    font-size: 1.563em;
+    color: var(--ion-color-primary);
+    vertical-align: center;
+  }
+}
+
+.filter {
+  --color: var(--ion-color-primary);
+  --background: white;
+  text-transform: none;
+  position:absolute;
+  right: 0.625em;
+  border-radius: 0.938em;
+  --box-shadow: 0em 1.125em 2.5em rgba(0, 0, 0, 0.051);
+  margin:0;
+}
+
+.filter2 {
+  --color: var(--ion-color-primary);
+  --background: white;
+  text-transform: none;
+  border-radius: 0.938em;
+  --box-shadow: 0em 1.125em 2.5em rgba(0, 0, 0, 0.051);
+  margin:0;
+}

@@ -1,0 +1,38 @@
+ion-toolbar {
+  --background: var(--ion-color-primary);
+  box-shadow: 0em 1.125em 2.5em rgba(40, 59, 122, 0.302);
+  color: white;
+}
+ion-segment {
+  margin-top: 0.625em;
+}
+ion-segment-button {
+  text-transform: none;
+  font-weight: 600;
+  --indicator-height: 0.188em;
+}
+ion-card-title {
+  font-size: 1.250em;
+  font-weight: 600;
+}
+.timing {
+  font-size: 0.625em;
+  margin-top: 0.625em;
+}
+ion-card {
+  margin: 1.250em;
+  border-radius: 0.625em;
+  box-shadow: 0em 1.250em 2.5em rgba(29, 31, 38, 0.2);
+}
+.delete {
+  right: 0.625em;
+  top: 0.313em;
+  position: absolute;
+  color: var(--ion-color-danger);
+  ion-icon {
+    font-size: 1.250em;
+  }
+}
+ion-fab {
+  margin: 1.250em;
+}

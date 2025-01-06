@@ -1,0 +1,47 @@
+ion-toolbar {
+  --background: var(--ion-color-primary);
+  box-shadow: 0em 1.125em 2.5em rgba(40, 59, 122, 0.302);
+  color: white;
+}
+.ads {
+  margin-left: 1.250em;
+  margin-right: 1.250em;
+}
+ion-item {
+  margin-left: 1.875em;
+  margin-right: 1.875em;
+  margin-bottom: 1.563em;
+  border-radius: 0.625em 0.625em 0.625em 0.625em;
+  border-style: "solid";
+  --background: #eeee;
+  ion-label {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+  }
+  ion-input {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1em;
+  }
+}
+.banner-word {
+  color: var(--ion-color-primary);
+  font-weight: 600;
+  font-size: 1.125em;
+  margin-left: 1.875em;
+}
+.add-banner {
+  margin-bottom: 0.938em;
+}
+.banner-image {
+  margin-left: 1.875em;
+  margin-right: 1.875em;
+  width: 85%;
+  box-shadow: 0em 1.125em 2.5em rgba(40, 59, 122, 0.302);
+  border-radius: 0.625em;
+}
+.submit {
+  margin: 1.875em;
+  text-transform: none;
+  height: 2.5em;
+  box-shadow: 0em 1.125em 2.5em rgba(40, 59, 122, 0.302);
+}

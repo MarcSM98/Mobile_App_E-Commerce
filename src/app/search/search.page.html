@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Search</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]='true'>
+  <div class="search-content">
+    <ion-list-header>
+      <strong>
+        <h3>What items are you looking for?</h3>
+      </strong>
+    </ion-list-header>
+    <form [formGroup]="searchForm">
+    <ion-searchbar placeholder='Search your items' formControlName='search'></ion-searchbar>
+    </form>
+    <ion-list-header>
+      <strong>Categories</strong>
+    </ion-list-header>
+    <div>
+      <ion-chip *ngFor="let c of categories; let id = index" (click)='toggleCat(id)' class='{{c.clicked?"highlighted":""}}'>
+        <ion-label>{{c.name}}</ion-label>
+      </ion-chip>
+      <ion-chip *ngIf="event.active" (click)='toggleEvent()' class='{{event.clicked?"highlightedR":""}}'>
+        <ion-label>{{event.name}}</ion-label>
+      </ion-chip>
+    </div>
+    <ion-list lines=none *ngIf='!(event.clicked == false && searchForm.value.search == "" && selectedCat.length == 0)'>
+      <ion-list-header>
+        <strong>Search Results</strong>
+      </ion-list-header>
+      
+      <ion-item *ngIf="productsF.length == 0">No results found.<br>Try seraching different keywords or categories.</ion-item>
+      
+      <ion-item class='search-result' detail *ngFor='let p of productsF' [routerLink]='["/product-details", p.id]'>
+        <ion-thumbnail slot="start">
+          <img src="{{p.images[0]}}">
+        </ion-thumbnail>
+        <ion-label>
+          <h4>{{p.name}}</h4>
+          <p>S$ {{p.price}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

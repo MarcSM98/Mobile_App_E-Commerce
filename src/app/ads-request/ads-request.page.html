@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Advertisement Request</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="adsForm">
+    <img class='ads' src='./assets/ad_request.png' alt=''>
+    <div>
+      <ion-item>
+        <ion-label position="floating">Event URL/ Seller Email</ion-label>
+        <ion-input formControlName="info"></ion-input>
+      </ion-item>
+    </div>
+    <ion-item class='payment'>
+      <ion-label>Advertisement Type</ion-label>
+      <ion-select value='1' interface=popover formControlName="type">
+        <ion-select-option value='1'>Event</ion-select-option>
+        <ion-select-option value='2'>Seller Page</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item class='payment'>
+      <ion-label>Payment Mode</ion-label>
+      <ion-select value='PayLah' interface=popover formControlName="paymentMode">
+        <ion-select-option value='PayLah'>Paylah</ion-select-option>
+        <ion-select-option value='Cash'>Cash</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Start Date</ion-label>
+      <ion-datetime displayFormat="DD MMM YYYY" min="{{todayPlus3}}" max="{{max}}" value="{{todayPlus3}}" formControlName="activeDate">
+      </ion-datetime>
+    </ion-item>
+    <ion-item class='days'>
+      <ion-label>No. of days</ion-label>
+      <ion-select value='3' interface=popover formControlName="numDays">
+        <ion-select-option value='3'>3</ion-select-option>
+        <ion-select-option value='7'>7</ion-select-option>
+        <ion-select-option value='14'>14</ion-select-option>
+        <ion-select-option value='30'>30</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <span class='banner'>
+      <span class='banner-word'>
+        Banner (640 x 427)
+      </span>
+      <span>
+        <ion-button class='add-image' size='small' fill='clear' (click)='presentActionSheet()'>
+          <ion-icon slot='icon-only' name="add-circle-outline"></ion-icon>
+        </ion-button>
+      </span>
+    </span>
+    <ion-button size='small' fill='clear' class="like" (click)='removeNewImage()' *ngIf="imgpath != ''">
+      <ion-icon slot='icon-only' name="close-outline"></ion-icon>
+    </ion-button>
+    <ion-img [src]='imgpath' alt='' width="61em" height="420.175em" class="banner-image" *ngIf="imgpath != ''"></ion-img>
+    <ion-button class='submit' expand='block' (click)='confirmAlert()'>Submit</ion-button>
+  </form>
+</ion-content>
