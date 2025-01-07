@@ -1,4 +1,5 @@
 # Mobile Application E-Commerce
+- Video link for overall demonstration: https://drive.google.com/file/d/1DmnhxYQqY987DNuF4Ht1e2ibHrivvVsW/view
 
 ## Background
 LaLumiere is a mobile e-commerce application designed to connect buyers and sellers on a userfriendly online platform. Developed during the pandemic, this project aims to support entrepreneurs by providing an accessible space to market their products to specific target audiences, thereby increasing their online presence and attracting more customers. The application enables seamless transactions, making it easier for users to venture into online businesses and adapt to the growing digital economy.
@@ -35,8 +36,7 @@ LaLumiere is a mobile e-commerce application designed to connect buyers and sell
 
 
 
-## Video
-https://drive.google.com/file/d/1DmnhxYQqY987DNuF4Ht1e2ibHrivvVsW/view
+
 
 
 
