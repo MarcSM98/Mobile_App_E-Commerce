@@ -1,5 +1,4 @@
 # Mobile Application E-Commerce
-- Video Demostration: https://drive.google.com/file/d/1DmnhxYQqY987DNuF4Ht1e2ibHrivvVsW/view
 - Video Demostration: https://drive.google.com/file/d/1I5c0jIRi6iGoSCKPMo54h2_nwKF9V24l/view?usp=sharing
 
 ## Background
