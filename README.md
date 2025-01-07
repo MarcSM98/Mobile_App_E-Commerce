@@ -6,13 +6,13 @@
 LaLumiere is a mobile e-commerce application designed to connect buyers and sellers on a userfriendly online platform. Developed during the pandemic, this project aims to support entrepreneurs by providing an accessible space to market their products to specific target audiences, thereby increasing their online presence and attracting more customers. The application enables seamless transactions, making it easier for users to venture into online businesses and adapt to the growing digital economy.
 
 ## Technologies Used
-1. Frontend Development:
-  - HTML
-  - CSS
-  - Ionic
+Frontend Development:
+- HTML
+- CSS
+- Ionic
 
-2. Database: 
-  - Cloud Firestore
+Database: 
+- Cloud Firestore
 
 
 ## Features
